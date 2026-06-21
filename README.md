@@ -10,15 +10,29 @@ Default output is **Chinese**, matching the original use case. Edit the cron pro
 
 - US equities: S&P 500, Nasdaq, mega-cap tech, AI/semis/software/cloud.
 - Canada lens: TSX, CAD, oil, Bank of Canada, Canadian macro, selected Canadian tech/banks/energy when relevant.
-- Macro/rates: Fed, BoC, CPI/PCE/jobs/GDP/retail sales, Treasury yields.
+- Macro/rates: Fed, BoC, CPI/PCE/jobs/GDP/retail sales, Treasury yields, FRED macro series when reachable.
 - TMT / AI stocks: NVDA, MSFT, AAPL, GOOGL, AMZN, META, TSLA, AVGO, AMD, TSM, ASML, ORCL, CRM, NOW, ADBE, NFLX; optional Canada names such as SHOP, CSU.TO, DSG.TO, OTEX.
+
+## Free data layers
+
+The probe currently uses free/public sources:
+
+- **Yahoo Finance chart endpoint** — rough market and watchlist snapshots for SPY/QQQ/TSX proxies, USD/CAD, oil, gold, VIX, and major TMT/AI stocks.
+- **Stooq CSV** — fallback daily ETF/market data where available.
+- **Nasdaq earnings calendar** — upcoming earnings dates and consensus fields when available.
+- **FRED CSV** — macro series such as 2Y/10Y yields, WTI, USD/CAD, VIX and breakevens when reachable.
+- **RSS / Google News RSS** — market, macro, company and Canada-specific news discovery.
+
+All of these are discovery/context layers. The Hermes agent still has to verify source URLs and facts before including an item in the final brief.
 
 ## How it works
 
 ```text
 finance_market_rss_probe.py
 ├── public RSS / Google News RSS candidate leads
-├── rough public market context when available
+├── Yahoo Finance + Stooq market/watchlist snapshots
+├── Nasdaq earnings calendar for upcoming reports
+├── FRED macro series when reachable
 └── hard timeouts so bad feeds don't block cron
 
 Hermes cron agent

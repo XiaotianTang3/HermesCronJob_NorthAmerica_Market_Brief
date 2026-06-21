@@ -19,7 +19,7 @@ Scope: US equities + Canada lens + TMT/AI stocks. Not investment advice.
 ## 4. Canada Lens
 - …… 来源：https://example.com。置信度：中。
 
-## 5. Watchlist: Next 24-72h
+## 5. Earnings / Calendar / Watchlist: Next 24-72h
 - ……
 
 ## 6. Bottom Line

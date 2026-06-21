@@ -24,6 +24,18 @@ Unless customized:
 - Macro: Fed, Bank of Canada, CPI/PCE/jobs/GDP/retail sales, Treasury yields, CAD, oil.
 - Exclude: penny-stock hype, unsourced social posts, generic analyst chatter, crypto unless it materially affects listed equities or macro risk.
 
+## Data layers
+
+The v1.2 probe uses free/public data layers:
+
+- RSS / Google News RSS for candidate market and company leads.
+- Yahoo Finance chart endpoint for rough market snapshots and watchlist moves.
+- Stooq daily CSV as a fallback for selected ETFs.
+- Nasdaq earnings calendar API for upcoming earnings discovery.
+- FRED CSV endpoint for macro series such as 2Y/10Y yields, WTI, USD/CAD, VIX and breakevens when reachable.
+
+These data layers are for context and discovery. The final brief must still verify important claims and source URLs.
+
 ## Source priority
 
 1. Official/primary sources:
@@ -97,3 +109,4 @@ Before finalizing:
 - Separate facts from interpretation.
 - Prefer 5-9 strong items over 15 weak items.
 - Watchlist must be concrete, not generic.
+- Use earnings calendar and macro/market snapshots when available; explicitly say when data is stale or markets are closed.

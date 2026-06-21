@@ -25,6 +25,7 @@ Use this before claiming another Hermes agent has replicated the workflow.
 - [ ] It explains market drivers, not just headlines.
 - [ ] It does not give buy/sell recommendations or personalized investment advice.
 - [ ] It distinguishes latest available trading day vs live market data.
+- [ ] It uses market snapshots, earnings calendar, and macro series when available without treating them as investment advice.
 - [ ] Watchlist contains concrete upcoming events/data, not generic statements.
 
 ## Failure modes
