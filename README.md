@@ -124,3 +124,10 @@ examples/
 ## Disclaimer
 
 This repository is for information summarization and market-intelligence workflows. It does not provide financial, investment, tax, or legal advice.
+
+## Optional: Email Delivery via Resend
+The updated prompt template includes an instruction to send the final brief via email using a local `send_resend.py` script. 
+To enable this:
+1. Ensure you have a valid `RESEND_API_KEY` and target emails configured in `~/.hermes/.env` (e.g., `RESEND_TARGETS_01="your_email@example.com"`).
+2. Ensure you have a `send_resend.py` script in `~/.hermes/scripts/` capable of reading these environment variables and firing the Resend API.
+3. If you do not want email delivery, simply remove the "特别任务（邮件订阅交付）" section from the `cron-templates/north-america-market-brief.json` prompt before creating the job.
